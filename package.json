@@ -1,0 +1,28 @@
+{
+  "name": "priority-queue",
+  "version": "1.0.0",
+  "description": "A package for priority queue (heap tree) data structure",
+  "main": "./build/index.js",
+  "types":"./build/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build":"tsc"
+  },
+  "keywords": [
+    "data",
+    "structrue",
+    "trees",
+    "sort",
+    "iteratable",
+    "typescript"
+  ],
+  "author": "khaled osama",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.15.2",
+    "@typescript-eslint/parser": "^4.15.2",
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}
