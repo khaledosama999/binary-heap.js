@@ -2,7 +2,8 @@
     "env": {
         "browser": true,
         "es2021": true,
-        "node": true
+        "node": true,
+        "mocha": true
     },
     "extends": [
         "airbnb-base"
@@ -16,5 +17,18 @@
         "@typescript-eslint"
     ],
     "rules": {
-    }
+      "import/extensions": "off",
+      "no-unused-vars": "off",
+      "no-shadow": "off",
+      "@typescript-eslint/no-shadow": ["error"],
+      "@typescript-eslint/no-unused-vars": "error",
+      "max-len":["error",{"code":120}]
+    },
+    "settings": {
+      "import/resolver": {
+          "node": {
+              "extensions": [".js", ".jsx", ".ts", ".tsx"]
+          }
+      }
+  }
 }

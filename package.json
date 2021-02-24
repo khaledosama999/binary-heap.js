@@ -1,12 +1,12 @@
 {
-  "name": "priority-queue",
+  "name": "binary-heap",
   "version": "0.0.0",
-  "description": "A package for priority queue (heap tree) data structure",
+  "description": "A package for binary heap (heap tree) data structure",
   "main": "./build/index.js",
   "private": "false",
   "types": "./build/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0",
+    "test": "mocha -r ts-node/register tests/**/*.spec.ts",
     "build": "tsc",
     "husky": "husky init",
     "postinstall": "husky install",
@@ -19,17 +19,26 @@
   },
   "keywords": [
     "data",
-    "structrue",
+    "structure",
     "trees",
     "sort",
     "iteratable",
+    "heap",
+    "max",
+    "min",
+    "array",
+    "set",
+    "map",
     "typescript"
   ],
   "author": "khaled osama",
   "license": "ISC",
   "devDependencies": {
+    "@types/chai": "^4.2.15",
+    "@types/mocha": "^8.2.1",
     "@typescript-eslint/eslint-plugin": "^4.15.2",
     "@typescript-eslint/parser": "^4.15.2",
+    "chai": "^4.3.0",
     "commitizen": "^4.2.3",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.20.0",
@@ -37,7 +46,10 @@
     "eslint-plugin-import": "^2.22.1",
     "generate-changelog": "^1.8.0",
     "husky": "^5.1.1",
-    "pinst": "^2.1.6"
+    "mocha": "^8.3.0",
+    "pinst": "^2.1.6",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.5"
   },
   "husky": {
     "hooks": {
