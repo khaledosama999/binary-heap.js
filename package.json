@@ -6,13 +6,12 @@
   "files": [
     "build"
   ],
-  "private": "false",
   "types": "./build/index.d.ts",
   "scripts": {
     "test": "mocha -r ts-node/register tests/**/*.spec.ts",
     "build": "tsc",
     "husky": "husky init",
-    "postinstall": "husky install",
+    "_postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
     "lint": "eslint",
