@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "description": "A package for binary heap (heap tree) data structure",
   "main": "./build/index.js",
+  "files": [
+    "build"
+  ],
   "private": "false",
   "types": "./build/index.d.ts",
   "scripts": {
