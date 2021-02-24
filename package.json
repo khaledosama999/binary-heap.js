@@ -1,5 +1,5 @@
 {
-  "name": "binary-heap",
+  "name": "binary-heap.js",
   "version": "1.0.0",
   "description": "A package for binary heap (heap tree) data structure",
   "main": "./build/index.js",
