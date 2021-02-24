@@ -23,6 +23,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     
+    - run: npm i
     - id: publish
       uses: JS-DevTools/npm-publish@v1
       with:
