@@ -70,4 +70,24 @@ describe('Functionality', () => {
 
     expect(sortedArray).to.have.ordered.members([8, 7, 5, 1]);
   });
+
+  it('it works with complex objects given the right extractor', () => {
+    const array = [{ id: 1 }, { id: 7 }, { id: 3 }, { id: 8 }];
+
+    const binaryHeap = new BinaryHeap(
+      (x) => x.id,
+      array.values(),
+    );
+
+    const sortedArray = [];
+
+    while (true) {
+      const x = binaryHeap.pop();
+      if (!x) break;
+
+      sortedArray.push(x);
+    }
+
+    expect(sortedArray).to.deep.eq([{ id: 8 }, { id: 7 }, { id: 3 }, { id: 1 }]);
+  });
 });
