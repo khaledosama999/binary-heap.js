@@ -2,6 +2,9 @@
   "name": "binary-heap.js",
   "version": "1.0.0",
   "description": "A package for binary heap (heap tree) data structure",
+  "repository": {
+    "url": "https://github.com/khaledosama999/priority-queue"
+  },
   "main": "./build/index.js",
   "files": [
     "build"
