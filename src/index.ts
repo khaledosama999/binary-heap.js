@@ -1,102 +1,102 @@
 /* eslint-disable class-methods-use-this */
-class BinaryHeap <T, U> {
-   private array : T [];
+class BinaryHeap<T, U> {
+  private array: T[];
 
-   private isMaxHeap : boolean;
+  private isMaxHeap: boolean;
 
-   private extractor: (element: T) => U
+  private extractor: (element: T) => U
 
-   private comparator:(elementOneIndex:number, elementTwoIndex:number) => boolean
+  private comparator: (elementOneIndex: number, elementTwoIndex: number) => boolean
 
-   public constructor(
-     extractor:(element: T)=> U,
-     iterator?: IterableIterator<T>,
-     isMaxHeap:boolean = true,
-   ) {
-     this.array = [];
-     this.isMaxHeap = isMaxHeap;
-     this.extractor = extractor;
-     this.comparator = isMaxHeap ? this.maxHeap : this.minHeap;
+  public constructor(extractor: (element: T) => U, iterator?: IterableIterator<T>, isMaxHeap: boolean = true) {
+    this.array = [];
+    this.isMaxHeap = isMaxHeap;
+    this.extractor = extractor;
+    this.comparator = isMaxHeap ? this.maxHeap : this.minHeap;
 
-     // eslint-disable-next-line no-constant-condition
-     while (true) {
-       const element = iterator?.next();
+    this.insertMany(iterator);
+  }
 
-       if (!element || element?.done) { break; }
+  public insert(element: T) {
+    this.array.push(element);
+    this.heapify(this.array.length - 1);
+  }
 
-       this.array.push(element?.value);
-       this.heapify(this.array.length - 1);
-     }
-   }
+  public pop() {
+    const top = this.array[0];
 
-   public insert(element:T) {
-     this.array.push(element);
-     this.heapify(this.array.length - 1);
-   }
+    this.array[0] = this.array[this.array.length - 1];
 
-   public pop() {
-     const top = this.array[0];
+    // Re-balance the tree
+    this.reBalance(0);
+    this.array.pop();
 
-     this.array[0] = this.array[this.array.length - 1];
+    return top;
+  }
 
-     // Re-balance the tree
-     this.reBalance(0);
-     this.array.pop();
+  public insertMany(iterator?: IterableIterator<T>) {
+    const loopCondition = true;
+    while (loopCondition) {
+      const element = iterator?.next();
 
-     return top;
-   }
+      if (!element || element?.done) { break; }
 
-   private parent(index: number) {
-     return Math.max(Math.floor((index - 1) / 2), 0);
-   }
+      this.array.push(element?.value);
+      this.heapify(this.array.length - 1);
+    }
+  }
 
-   private left(index: number) {
-     return index * 2 + 1;
-   }
+  private parent(index: number) {
+    return Math.max(Math.floor((index - 1) / 2), 0);
+  }
 
-   private right(index:number) {
-     return index * 2 + 2;
-   }
+  private left(index: number) {
+    return index * 2 + 1;
+  }
 
-   private maxHeap(elementOneIndex: number, elementTwoIndex:number) {
-     return this.extractor(this.array[elementOneIndex]) > this.extractor(this.array[elementTwoIndex]);
-   }
+  private right(index: number) {
+    return index * 2 + 2;
+  }
 
-   private minHeap(elementOneIndex: number, elementTwoIndex:number) {
-     return this.extractor(this.array[elementOneIndex]) < this.extractor(this.array[elementTwoIndex]);
-   }
+  private maxHeap(elementOneIndex: number, elementTwoIndex: number) {
+    return this.extractor(this.array[elementOneIndex]) > this.extractor(this.array[elementTwoIndex]);
+  }
 
-   private swap(indexOne:number, indexTwo:number) {
-     const tmp = this.array[indexOne];
-     this.array[indexOne] = this.array[indexTwo];
-     this.array[indexTwo] = tmp;
-   }
+  private minHeap(elementOneIndex: number, elementTwoIndex: number) {
+    return this.extractor(this.array[elementOneIndex]) < this.extractor(this.array[elementTwoIndex]);
+  }
 
-   private heapify(index: number) {
-     let currentIndex = index;
-     let parentIndex = this.parent(currentIndex);
+  private swap(indexOne: number, indexTwo: number) {
+    const tmp = this.array[indexOne];
+    this.array[indexOne] = this.array[indexTwo];
+    this.array[indexTwo] = tmp;
+  }
 
-     while (currentIndex && this.comparator(currentIndex, parentIndex)) {
-       this.swap(currentIndex, parentIndex);
+  private heapify(index: number) {
+    let currentIndex = index;
+    let parentIndex = this.parent(currentIndex);
 
-       currentIndex = parentIndex;
-       parentIndex = this.parent(parentIndex);
-     }
-   }
+    while (currentIndex && this.comparator(currentIndex, parentIndex)) {
+      this.swap(currentIndex, parentIndex);
 
-   private reBalance(index:number) {
-     let top = index;
-     const left = this.left(top);
-     const right = this.right(top);
+      currentIndex = parentIndex;
+      parentIndex = this.parent(parentIndex);
+    }
+  }
 
-     if (left < this.array.length && this.comparator(left, top)) { top = left; }
-     if (right < this.array.length && this.comparator(right, top)) { top = right; }
+  private reBalance(index: number) {
+    let top = index;
+    const left = this.left(top);
+    const right = this.right(top);
 
-     if (top !== index) {
-       this.swap(top, index);
-       this.reBalance(top);
-     }
-   }
+    if (left < this.array.length && this.comparator(left, top)) { top = left; }
+    if (right < this.array.length && this.comparator(right, top)) { top = right; }
+
+    if (top !== index) {
+      this.swap(top, index);
+      this.reBalance(top);
+    }
+  }
 }
 
 export default BinaryHeap;
