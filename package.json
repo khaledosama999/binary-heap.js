@@ -13,6 +13,7 @@
   "scripts": {
     "test": "mocha -r ts-node/register tests/**/*.spec.ts",
     "build": "tsc",
+    "git-cz": "./node_modules/.bin/git-cz",
     "husky": "husky init",
     "_postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
@@ -20,7 +21,8 @@
     "lint": "eslint",
     "release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
     "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
-    "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags"
+    "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags",
+    "postinstall": "husky install"
   },
   "keywords": [
     "data",
@@ -36,7 +38,19 @@
     "map",
     "typescript"
   ],
-  "author": "khaled osama",
+  "author": "khaled osama <khaledosama52@gmail.com>",
+  "contributors": [
+    {
+      "name": "Khaled osama <khaledosama999>",
+      "email": "khaledosama52@gmail.com",
+      "url": "https://github.com/khaledosama999"
+    },
+    {
+      "name": "Milad E. Fahmy <miladezzat>",
+      "email": "miladezzat.f@gmail.com",
+      "url": "https://github.com/miladezzat"
+    }
+  ],
   "license": "ISC",
   "devDependencies": {
     "@types/chai": "^4.2.15",
