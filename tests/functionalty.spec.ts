@@ -90,4 +90,23 @@ describe('Functionality', () => {
 
     expect(sortedArray).to.deep.eq([{ id: 8 }, { id: 7 }, { id: 3 }, { id: 1 }]);
   });
+
+  it('it works with complex objects given the right extractor and use insert many for bulk', () => {
+    const array = [{ id: 1 }, { id: 7 }, { id: 3 }, { id: 8 }];
+
+    const binaryHeap = new BinaryHeap((x) => x.id, array.values());
+
+    const newArray = [{ id: 2 }];
+    const sortedArray = [];
+
+    binaryHeap.insertMany(newArray.values());
+    while (true) {
+      const x = binaryHeap.pop();
+      if (!x) break;
+
+      sortedArray.push(x);
+    }
+
+    expect(sortedArray).to.deep.eq([{ id: 8 }, { id: 7 }, { id: 3 }, { id: 2 }, { id: 1 }]);
+  });
 });
