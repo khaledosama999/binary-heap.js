@@ -1,16 +1,16 @@
 /* eslint-disable no-constant-condition */
 /* eslint-disable no-cond-assign */
 import { expect } from 'chai';
-import BinaryHeap from '../src/index';
+import { MaxHeap, MinHeap } from '../src/index';
 
 describe('Functionality', () => {
   it('it works as a max heap', () => {
-    const binaryHeap = new BinaryHeap((x) => x, [1, 7, 5, 8].values());
+    const maxHeap = new MaxHeap((x) => x, [1, 7, 5, 8].values());
 
     const sortedArray = [];
 
     while (true) {
-      const x = binaryHeap.pop();
+      const x = maxHeap.pop();
       if (!x) break;
 
       sortedArray.push(x);
@@ -20,12 +20,12 @@ describe('Functionality', () => {
   });
 
   it('it works as a min heap', () => {
-    const binaryHeap = new BinaryHeap((x) => x, [1, 7, 5, 8].values(), false);
+    const minHeap = new MinHeap((x) => x, [1, 7, 5, 8].values());
 
     const sortedArray = [];
 
     while (true) {
-      const x = binaryHeap.pop();
+      const x = minHeap.pop();
       if (!x) break;
 
       sortedArray.push(x);
@@ -35,12 +35,12 @@ describe('Functionality', () => {
   });
 
   it('it works with sets', () => {
-    const binaryHeap = new BinaryHeap((x) => x, new Set([1, 7, 5, 8]).values());
+    const maxHeap = new MaxHeap((x) => x, new Set([1, 7, 5, 8]).values());
 
     const sortedArray = [];
 
     while (true) {
-      const x = binaryHeap.pop();
+      const x = maxHeap.pop();
       if (!x) break;
 
       sortedArray.push(x);
@@ -57,12 +57,12 @@ describe('Functionality', () => {
     map.set(5, '5');
     map.set(8, '8');
 
-    const binaryHeap = new BinaryHeap((x) => x, map.keys());
+    const maxHeap = new MaxHeap((x) => x, map.keys());
 
     const sortedArray = [];
 
     while (true) {
-      const x = binaryHeap.pop();
+      const x = maxHeap.pop();
       if (!x) break;
 
       sortedArray.push(x);
@@ -74,7 +74,7 @@ describe('Functionality', () => {
   it('it works with complex objects given the right extractor', () => {
     const array = [{ id: 1 }, { id: 7 }, { id: 3 }, { id: 8 }];
 
-    const binaryHeap = new BinaryHeap(
+    const maxHeap = new MaxHeap(
       (x) => x.id,
       array.values(),
     );
@@ -82,7 +82,7 @@ describe('Functionality', () => {
     const sortedArray = [];
 
     while (true) {
-      const x = binaryHeap.pop();
+      const x = maxHeap.pop();
       if (!x) break;
 
       sortedArray.push(x);
@@ -94,14 +94,14 @@ describe('Functionality', () => {
   it('it works with complex objects given the right extractor and use insert many for bulk', () => {
     const array = [{ id: 1 }, { id: 7 }, { id: 3 }, { id: 8 }];
 
-    const binaryHeap = new BinaryHeap((x) => x.id, array.values());
+    const maxHeap = new MaxHeap((x) => x.id, array.values());
 
     const newArray = [{ id: 2 }];
     const sortedArray = [];
 
-    binaryHeap.insertMany(newArray.values());
+    maxHeap.insertMany(newArray.values());
     while (true) {
-      const x = binaryHeap.pop();
+      const x = maxHeap.pop();
       if (!x) break;
 
       sortedArray.push(x);
