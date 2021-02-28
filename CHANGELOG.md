@@ -1,3 +1,18 @@
+### 1.2.0 (2021-02-28)
+
+##### Chores
+
+*  update package json ([b4bf514c](https://github.com/khaledosama999/binary-heap.js/commit/b4bf514c40c86e4b8c545ec7c4322082023f831e))
+* **repo:**  change repo name on github and package url ([3bc09828](https://github.com/khaledosama999/binary-heap.js/commit/3bc09828786b7f71840fb68e5185bc30fb960c9d))
+
+##### New Features
+
+*  create insertMany method ([6bce2cbd](https://github.com/khaledosama999/binary-heap.js/commit/6bce2cbd1ad856ca0583283105ab3efd6689e092))
+
+##### Tests
+
+*  make test for insertMany ([abbf20d7](https://github.com/khaledosama999/binary-heap.js/commit/abbf20d775612589edd35128ceb8a76529d6e87e))
+
 ### 1.1.0 (2021-02-25)
 
 ##### Chores
