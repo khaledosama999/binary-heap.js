@@ -1,3 +1,17 @@
+## 2.0.0 (2021-02-28)
+
+##### Documentation Changes
+
+* **readme.md:**  update the usage docs to use the two subclasses ([53c9ee35](https://github.com/khaledosama999/binary-heap.js/commit/53c9ee351171b74ea5ce07e7eff72a4a738df568))
+
+##### New Features
+
+* **binary heap:**  split the class into two sub classes ([e0354a4e](https://github.com/khaledosama999/binary-heap.js/commit/e0354a4e7ce19601422024b20214f9da3e586751))
+
+##### Tests
+
+* **heap:**  update tests to use the subclasses ([b5aac248](https://github.com/khaledosama999/binary-heap.js/commit/b5aac248ce0aec7a34f3845e211bdb02f85925f0))
+
 ### 1.2.0 (2021-02-28)
 
 ##### Chores
