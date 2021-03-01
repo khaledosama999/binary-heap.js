@@ -10,9 +10,7 @@ npm i binary-heap.js
 | Parameter   | Type | Required| Default| Description     |
 | :---        |    :----:   | :---: | :---: |         ---: |
 | extractor      | function |    false |   | function that extracts the key used for sorting elements in the heap (should be equal to identity for primitive data types)   |
-| iterator   | IterableIterator  | false| | Used to provide the heap with initial elements |
 
-Works with any data structure that implements the iteratable interface to provide it's elements
 # Methods
 
 | Name   | Description | Return |
@@ -54,32 +52,22 @@ map.set(1,1)
 map.set(2,2)
 map.set(3,3);
 
-const maxHeapOne = new MaxHeap(
-    (x) =>x,
-    arr.values(),
-    false
-);
+const maxHeapOne = new MaxHeap((x) =>x);
+maxHeapOne.insertMany(arr.values());
 
-const maxHeapTwo = new MaxHeap(
-    (x) =>x,
-    sets.values(),
-    false
-);
+const maxHeapTwo = new MaxHeap((x) =>x);
+maxHeapTwo.insertMany(set.values());
 
-const maxHeapThree = new MaxHeap(
-    (x) =>x,
-    map.keys().values(),
-    false
-)
+const maxHeapThree = new MaxHeap((x) =>x);
+maxHeapThree.insertMany(map.keys().values());
+
 ```
 Works with complex objects as long as you provide the right extractor
 
 ```js
 const arr = [{id:1},{id:2},{id:3}];
 
-const maxHeap = new MaxHeap(
-    (x) =>x.id,
-    arr.values(),
-    false
-)
+const maxHeap = new MaxHeap((x) =>x.id);
+maxHeap.insertMany(arr.values());
+
 ```
