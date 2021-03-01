@@ -1,3 +1,19 @@
+## 3.0.0 (2021-03-01)
+
+##### Documentation Changes
+
+* **readme.md:**
+  *  update the README.md to accmodate the new constructor ([db3503b0](https://github.com/khaledosama999/binary-heap.js/commit/db3503b0df68db3d2f33779e94620f009082a2ea))
+  *  update usage section and add methods section ([beb5a867](https://github.com/khaledosama999/binary-heap.js/commit/beb5a867424775ea6ae1f379770e7e5c4546d43f))
+
+##### New Features
+
+* **heap:**  clean the constructor and remove insert data ([14178143](https://github.com/khaledosama999/binary-heap.js/commit/141781434abe71295b0a832574f9ab6b9423d372))
+
+##### Refactors
+
+* **tests:**  update the tests to accomdate the new constructor ([359ef7da](https://github.com/khaledosama999/binary-heap.js/commit/359ef7dae86c603ca2eb49222cb732481fee65de))
+
 ## 2.0.0 (2021-02-28)
 
 ##### Chores
