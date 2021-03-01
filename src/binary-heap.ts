@@ -4,11 +4,9 @@ abstract class BinaryHeap<T, U> {
 
     protected extractor: (element: T) => U
 
-    public constructor(extractor: (element: T) => U, iterator?: IterableIterator<T>) {
+    public constructor(extractor: (element: T) => U) {
       this.array = [];
       this.extractor = extractor;
-
-      this.insertMany(iterator);
     }
 
     public insert(element: T) {
@@ -37,6 +35,14 @@ abstract class BinaryHeap<T, U> {
 
         this.array.push(element?.value);
         this.heapify(this.array.length - 1);
+      }
+    }
+
+    public delete(fn: (x:T)=>boolean) {
+      for (let index = 0; index < this.array.length; index += 1) {
+        if (fn(this.array[index])) {
+
+        }
       }
     }
 
