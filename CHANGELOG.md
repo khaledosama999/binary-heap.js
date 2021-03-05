@@ -1,3 +1,13 @@
+### 3.1.0 (2021-03-05)
+
+##### New Features
+
+* **heap:**  add is empty method to check if the heap is empty or not ([53050004](https://github.com/khaledosama999/binary-heap.js/commit/53050004eb25ec1a6ea5481c84c7bfb2327120ba))
+
+##### Tests
+
+* **heap:**  add tests for is empty methods ([6f12d61b](https://github.com/khaledosama999/binary-heap.js/commit/6f12d61ba4c3c4ba1272bbc570538544d7bd2144))
+
 ## 3.0.0 (2021-03-01)
 
 ##### Documentation Changes
