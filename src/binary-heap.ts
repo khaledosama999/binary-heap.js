@@ -38,12 +38,8 @@ abstract class BinaryHeap<T, U> {
       }
     }
 
-    public delete(fn: (x:T)=>boolean) {
-      for (let index = 0; index < this.array.length; index += 1) {
-        if (fn(this.array[index])) {
-
-        }
-      }
+    public isEmpty() {
+      return this.array.length === 0;
     }
 
     protected parent(index: number) {
