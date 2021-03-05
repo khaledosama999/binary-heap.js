@@ -1,3 +1,9 @@
+#### 3.1.1 (2021-03-05)
+
+##### Documentation Changes
+
+* **heap:**  update docs to include is empty method ([bdef93d7](https://github.com/khaledosama999/binary-heap.js/commit/bdef93d73efd80f1bc92024eb0bea0dc4608fbc3))
+
 ### 3.1.0 (2021-03-05)
 
 ##### New Features

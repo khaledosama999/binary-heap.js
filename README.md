@@ -18,6 +18,7 @@ npm i binary-heap.js
 | Insert      | Insert a single element into the heap  |    void |  
 | InsertMany   | Inserts Many elements into the heap  | void| 
 | pop   | Pops the top element (maximum or minimum depending on the type of the heap)| type T (type of elements inserted)| 
+| isEmpty | Checks if the heap is empty or not | boolean
 
 # Usage
 ```js
