@@ -1,3 +1,9 @@
+#### 3.2.2 (2021-03-09)
+
+##### Chores
+
+* **bundle:**  fix browser entry ([ef2492b3](https://github.com/khaledosama999/binary-heap.js/commit/ef2492b37c1f5123f9a8c055db48b84619adf5f0))
+
 #### 3.2.1 (2021-03-09)
 
 ##### Bug Fixes
