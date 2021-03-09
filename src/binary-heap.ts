@@ -1,19 +1,40 @@
 /* eslint-disable class-methods-use-this */
+ type Extractor<T, U> = (element: T) => U | T
 abstract class BinaryHeap<T, U> {
     protected array: T[];
 
-    protected extractor: (element: T) => U
+    protected extractor: Extractor<T, U>
 
-    public constructor(extractor: (element: T) => U) {
+    public constructor(extractor:Extractor<T, U> = (x:T) => x) {
       this.array = [];
       this.extractor = extractor;
     }
 
+    /**
+     * Inserts a new element into the heap and re-balances
+     *  ```js
+     *  const x = new MaxHeap<Number,Number>(x => x)
+     *  x.insert(3)
+     *  ```
+     * @param {T} element The item to be inserted
+     *
+     * @returns void
+     */
     public insert(element: T) {
       this.array.push(element);
       this.heapify(this.array.length - 1);
     }
 
+    /**
+     * Pops the top of the heap (depending on the heap type might be the max or the min)
+     *  ```js
+     *  const x = new MaxHeap<Number,Number>(x => x)
+     *  x.insert(3);
+     *  const y = x.pop(); // 3
+     *  ```
+     *
+     * @returns {T}
+     */
     public pop() {
       const top = this.array[0];
 
@@ -26,6 +47,17 @@ abstract class BinaryHeap<T, U> {
       return top;
     }
 
+    /**
+     * Similar to insert but inserts many values and re-balances the tree
+     *  ```js
+     *  const array = [1.2.3]
+     *  const x = new MaxHeap<Number,Number>(x => x)
+     *  x.insertMany(array.values())
+     *  ```
+     * @param {IterableIterator<T>} iterator The iterator to provide values
+     *
+     * @returns void
+     */
     public insertMany(iterator?: IterableIterator<T>) {
       const loopCondition = true;
       while (loopCondition) {
@@ -38,6 +70,18 @@ abstract class BinaryHeap<T, U> {
       }
     }
 
+    /**
+     * Indicates if the heap is empty or not
+     *  ```js
+     *  const x = new MaxHeap<Number,Number>(x => x)
+     *  x.insertMany(3);
+     *  x.isEmpty() // false
+     *  x.pop() // 3
+     *  x.isEmpty() // true
+     *  ```
+     *
+     * @returns Boolean
+     */
     public isEmpty() {
       return this.array.length === 0;
     }
