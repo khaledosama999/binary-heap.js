@@ -1,3 +1,9 @@
+#### 3.2.1 (2021-03-09)
+
+##### Bug Fixes
+
+* **bundling:**  update source in package.json ([94b034d5](https://github.com/khaledosama999/binary-heap.js/commit/94b034d5be8be32839fc03a243bf7a704b46fc63))
+
 ### 3.2.0 (2021-03-09)
 
 ##### Chores
