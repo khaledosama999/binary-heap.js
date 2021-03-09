@@ -1,3 +1,9 @@
+### 3.3.0 (2021-03-09)
+
+##### Documentation Changes
+
+* **heap:**  update jsdocs for public methods ([5b61e765](https://github.com/khaledosama999/binary-heap.js/commit/5b61e7657264afd76f72a7a1b884cb5b4a031978))
+
 #### 3.2.2 (2021-03-09)
 
 ##### Chores
